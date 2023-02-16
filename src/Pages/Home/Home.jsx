@@ -17,12 +17,18 @@ const Home = () => {
     <div className="home">
       <form onSubmit={handleSendMail}>
         <p>Name</p>
-        <input type="text" name="name" />
+        <input type="text" name="name" className="tb" />
         <p>Email</p>
-        <input type="text" name="email" />
+        <input type="text" name="email" className="tb" />
         <p>Email Content</p>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        <input type="submit" value="send" />
+        <textarea
+          name="content"
+          id="content"
+          cols="30"
+          rows="10"
+          className="tb"
+        ></textarea>
+        <input type="submit" value="send" className="submit_btn" />
       </form>
     </div>
   );

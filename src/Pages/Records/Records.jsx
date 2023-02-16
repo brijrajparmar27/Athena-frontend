@@ -3,7 +3,7 @@ import useMailContext from "../../Hooks/Context/useMailContext";
 import useRecords from "../../Hooks/useRecords";
 import "./Records.css";
 const Records = () => {
-  const { fetchRecords } = useRecords();
+  const { fetchRecords, loading } = useRecords();
   const [records, setRecords] = useState([]);
   const { mail } = useMailContext();
   useEffect(() => {
@@ -27,8 +27,10 @@ const Records = () => {
               onClick={() => {
                 fetchRecords(setRecords, mail._id);
               }}
+              className="refresh_btn"
+              disabled={loading}
             >
-              Refresh
+              {loading ? "Loading" : "Refresh"}
             </button>
           </div>
         </div>
